@@ -1,0 +1,32 @@
+:root {
+    --oldAngle: 0;
+    --angle: 0;
+}
+
+#svg-object {
+    width: 80%;
+    height: 80%;
+}
+
+#Wheel {
+    transform-origin: center 171mm;
+    transform: rotate(calc(var(--angle) * 1deg));
+}
+
+.spinningWheel {
+    transform-origin: center 171mm;
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+}
+
+
+@keyframes spin {
+    0% {
+      transform: rotate(calc(var(--oldAngle) * 1deg));
+    }
+    100% {
+      transform: rotate(calc(var(--angle) * 1deg));
+    }
+}
